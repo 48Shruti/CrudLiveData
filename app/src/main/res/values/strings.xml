@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CrudLiveData</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="time">Time</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+</resources>
