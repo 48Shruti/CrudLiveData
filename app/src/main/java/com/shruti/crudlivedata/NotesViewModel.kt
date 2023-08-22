@@ -7,15 +7,24 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 class NotesViewModel(application: Application) : AndroidViewModel(application){
-     var notesList : LiveData<List<LiveDataEntity>>
-     var liveDataDao : LiveDataDao
+     var notesList : LiveData<List<NotesEntity>>
+     var notesDao : NotesDao
      init {
-         liveDataDao= LiveDataDb.getDatabase(application).liveDataDao()
-         notesList = liveDataDao.getNotes()
+         notesDao= NotesDb.getDatabase(application).notesDao()
+         notesList = notesDao.getNotes()
      }
-    fun insertNotes(liveDataEntity: LiveDataEntity){
+    fun insertNotes(notesEntity: NotesEntity){
         viewModelScope.launch{
-            liveDataDao.insertNotes(liveDataEntity)
+            notesDao.insertNotes(notesEntity)
         }
     }
+    fun deleteNotes(notesEntity: NotesEntity){
+        viewModelScope.launch{
+            notesDao.deleteNotes(notesEntity)
+        }
+    }
+    fun updateNotes(notesEntity: NotesEntity){
+        viewModelScope.launch{
+            notesDao.updateNotes(notesEntity)
+        }}
 }
