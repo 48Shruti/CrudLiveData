@@ -16,7 +16,7 @@
         android:id="@+id/tvdescription"
         android:textSize="@dimen/title"/>
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/time"
         android:id="@+id/tvtime"

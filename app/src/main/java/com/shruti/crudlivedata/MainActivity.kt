@@ -87,7 +87,8 @@ class MainActivity : AppCompatActivity(),RecyclerInterface {
                 notesViewModel.updateNotes(NotesEntity(
                     id= item[position].id,
                     title = dialogBinding.ettitle.text.toString(),
-                    description = dialogBinding.etdescription.text.toString()))
+                    description = dialogBinding.etdescription.text.toString())),
+
                 dialog.dismiss()
             }
         }
